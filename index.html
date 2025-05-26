@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marveled Creations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #fff5f8;
+      color: #4a4a4a;
+    }
+    header {
+      background-image: url('https://images.unsplash.com/photo-1504198266285-1659872e6590');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 100px 20px;
+      color: white;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2em;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .featured {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .featured div {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+    }
+    .featured img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .about, .contact {
+      background: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+    .contact form input, .contact form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+    footer {
+      background: #f2f2f2;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Marveled Creations</h1>
+    <p>Elegant Bouquets for Every Occasion</p>
+  </header>
+
+  <section>
+    <h2 style="font-family: 'Playfair Display', serif; text-align: center;">Featured Bouquets</h2>
+    <div class="featured">
+      <div>
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb" alt="Bouquet 1" />
+        <h3>Blush Romance</h3>
+        <p>Soft pink roses with white peonies – perfect for anniversaries.</p>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Bouquet 2" />
+        <h3>Golden Hour</h3>
+        <p>Sun-kissed blooms with a hint of gold ribbon – radiant and unique.</p>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1470509037663-253afd7f0f02" alt="Bouquet 3" />
+        <h3>Classic Charm</h3>
+        <p>Red roses in a timeless design – perfect for love and proposals.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2 style="font-family: 'Playfair Display', serif;">About Us</h2>
+    <p>Marveled Creations brings elegance and thoughtfulness to every bouquet. Whether you're celebrating love, friendship, or a special moment, our floral arrangements are designed to impress and express.</p>
+  </section>
+
+  <section class="contact">
+    <h2 style="font-family: 'Playfair Display', serif;">Get in Touch</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit" style="background:#f8c6d4;border:none;padding:10px 20px;border-radius:5px;font-weight:bold;cursor:pointer;">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Marveled Creations. All rights reserved.
+  </footer>
+</body>
+</html>
+Add homepage
