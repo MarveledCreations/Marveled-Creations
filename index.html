@@ -20,6 +20,14 @@
       padding: 100px 20px;
       color: white;
     }
+    header h1, header p {
+      background: linear-gradient(to right, #d4af7f, #b8860b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
     header h1 {
       font-family: 'Playfair Display', serif;
       font-size: 3em;
@@ -129,10 +137,6 @@
       z-index: 9999;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
-    #logo {
-      width: 200px;
-      margin-bottom: 15px;
-    }
     .faq-content {
       display: none;
       margin-top: 15px;
@@ -158,7 +162,6 @@
   <div id="popup-minimized" onclick="restorePopup()">Join Our VIP List</div>
 
   <header>
-    <img id="logo" src="/mnt/data/1BCF236A-F42F-4F31-97C4-18960D44F078.PNG" alt="Marveled Creations Logo" />
     <h1>Marveled Creations</h1>
     <p>Elegant Bouquets for Every Occasion</p>
   </header>
