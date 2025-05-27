@@ -49,11 +49,12 @@
       max-width: 100%;
       border-radius: 10px;
     }
-    .about, .contact {
+    .about, .contact, .faq {
       background: #fff;
       border-radius: 10px;
       padding: 30px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
     }
     .contact form input, .contact form textarea {
       width: 100%;
@@ -69,7 +70,6 @@
       padding: 20px;
       font-size: 0.9em;
     }
-    /* Popup styling */
     #popup {
       position: fixed;
       top: 0;
@@ -121,8 +121,16 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
     #logo {
-      width: 150px;
+      width: 200px;
       margin-bottom: 15px;
+    }
+    .faq-content {
+      display: none;
+      margin-top: 15px;
+    }
+    .faq h2 {
+      cursor: pointer;
+      color: #d4af7f;
     }
   </style>
 </head>
@@ -141,7 +149,7 @@
   <div id="popup-minimized" onclick="restorePopup()">Join Our VIP List</div>
 
   <header>
-    <img id="logo" src="https://chat.openai.com/share/preview/6d4a77d0-5cf9-440e-a22c-4f7bce82f407" alt="Marveled Creations Logo" />
+    <img id="logo" src="https://chat.openai.com/mnt/data/1BCF236A-F42F-4F31-97C4-18960D44F078.PNG" alt="Marveled Creations Logo" />
     <h1>Marveled Creations</h1>
     <p>Elegant Bouquets for Every Occasion</p>
   </header>
@@ -169,8 +177,18 @@
 
   <section class="about">
     <h2 style="font-family: 'Playfair Display', serif;">About Us</h2>
-    <p>Marveled Creations brings elegance and thoughtfulness to every bouquet. Whether you're celebrating love, friendship, or a special moment, our floral arrangements are designed to impress and express.</p>
-    <p>Our luxury bouquets are crafted for every cherished occasion—be it holidays, anniversaries, graduations, romantic surprises, engagements, or heartfelt gestures. Whether you're gifting a best friend, proposing to your fiancée, or celebrating your wife, Marveled Creations helps you express emotion through timeless florals.</p>
+    <p>At Marveled Creations, every bouquet is crafted with a deep sense of elegance, luxury, and emotional connection. We believe flowers aren’t just decorations—they’re meaningful expressions of life’s most cherished moments.</p>
+    <p>Our specialty is in curating high-end arrangements tailored for weddings, engagements, romantic milestones, and heartfelt gifts. Whether you're proposing to your soulmate, celebrating your mother, or surprising a friend, our designs bring beauty and sentiment together in perfect harmony.</p>
+  </section>
+
+  <section class="faq">
+    <h2 onclick="toggleFAQ()" style="font-family: 'Playfair Display', serif;">Frequently Asked Questions +</h2>
+    <div class="faq-content">
+      <p><strong>Do you offer custom bouquet designs?</strong><br>Yes! We love working on custom orders for special occasions. Contact us with your vision.</p>
+      <p><strong>Where do you deliver?</strong><br>Currently, we serve the local metro area, but we’re working on expanding our delivery zones.</p>
+      <p><strong>How far in advance should I place an order?</strong><br>We recommend ordering at least 2–3 days in advance, especially during holidays or peak seasons.</p>
+      <p><strong>What payment methods do you accept?</strong><br>We accept all major credit cards and PayPal.</p>
+    </div>
   </section>
 
   <section class="contact">
@@ -199,6 +217,13 @@
     function restorePopup() {
       document.getElementById('popup').style.display = 'flex';
       document.getElementById('popup-minimized').style.display = 'none';
+    }
+    function toggleFAQ() {
+      const faqContent = document.querySelector('.faq-content');
+      const faqHeader = document.querySelector('.faq h2');
+      const isVisible = faqContent.style.display === 'block';
+      faqContent.style.display = isVisible ? 'none' : 'block';
+      faqHeader.innerHTML = `Frequently Asked Questions ${isVisible ? '+' : '–'}`;
     }
   </script>
 </body>
