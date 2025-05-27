@@ -64,6 +64,15 @@
       border-radius: 5px;
       font-family: inherit;
     }
+    .confirmation-message {
+      display: none;
+      background: #d4af7f;
+      color: white;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 5px;
+      text-align: center;
+    }
     footer {
       background: #f2f2f2;
       text-align: center;
@@ -149,7 +158,7 @@
   <div id="popup-minimized" onclick="restorePopup()">Join Our VIP List</div>
 
   <header>
-    <img id="logo" src="https://chat.openai.com/mnt/data/1BCF236A-F42F-4F31-97C4-18960D44F078.PNG" alt="Marveled Creations Logo" />
+    <img id="logo" src="/mnt/data/1BCF236A-F42F-4F31-97C4-18960D44F078.PNG" alt="Marveled Creations Logo" />
     <h1>Marveled Creations</h1>
     <p>Elegant Bouquets for Every Occasion</p>
   </header>
@@ -193,11 +202,12 @@
 
   <section class="contact">
     <h2 style="font-family: 'Playfair Display', serif;">Get in Touch</h2>
-    <form>
+    <form onsubmit="showConfirmation(event)">
       <input type="text" placeholder="Your Name" required />
       <input type="email" placeholder="Your Email" required />
       <textarea rows="5" placeholder="Your Message"></textarea>
       <button type="submit" style="background:#d4af7f;border:none;padding:10px 20px;border-radius:5px;font-weight:bold;cursor:pointer;color:white;">Send</button>
+      <div class="confirmation-message" id="confirmationMessage">Thank you! Your message has been sent.</div>
     </form>
   </section>
 
@@ -224,6 +234,15 @@
       const isVisible = faqContent.style.display === 'block';
       faqContent.style.display = isVisible ? 'none' : 'block';
       faqHeader.innerHTML = `Frequently Asked Questions ${isVisible ? '+' : '–'}`;
+    }
+    function showConfirmation(event) {
+      event.preventDefault();
+      const message = document.getElementById('confirmationMessage');
+      message.style.display = 'block';
+      setTimeout(() => {
+        message.style.display = 'none';
+      }, 5000);
+      event.target.reset();
     }
   </script>
 </body>
