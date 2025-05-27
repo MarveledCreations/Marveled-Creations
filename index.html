@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background: #fff5f8;
+      background: #fdf8f4;
       color: #4a4a4a;
     }
     header {
@@ -69,10 +69,79 @@
       padding: 20px;
       font-size: 0.9em;
     }
+    /* Popup styling */
+    #popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    #popup-content {
+      background: #fffaf7;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 400px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+    #popup-content input[type="email"] {
+      padding: 10px;
+      width: 80%;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #popup-content button {
+      background: #d4af7f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #popup-minimized {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #d4af7f;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 9999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    #logo {
+      width: 150px;
+      margin-bottom: 15px;
+    }
   </style>
 </head>
 <body>
+  <div id="popup">
+    <div id="popup-content">
+      <h2>Join Our VIP Mailing List</h2>
+      <p>Be the first to know about special offers and seasonal collections.</p>
+      <input type="email" placeholder="Enter your email" />
+      <div>
+        <button onclick="subscribe()">Subscribe</button>
+        <button onclick="minimizePopup()" style="margin-left:10px;background:#ccc;color:#333;">Not Now</button>
+      </div>
+    </div>
+  </div>
+  <div id="popup-minimized" onclick="restorePopup()">Join Our VIP List</div>
+
   <header>
+    <img id="logo" src="https://chat.openai.com/share/preview/6d4a77d0-5cf9-440e-a22c-4f7bce82f407" alt="Marveled Creations Logo" />
     <h1>Marveled Creations</h1>
     <p>Elegant Bouquets for Every Occasion</p>
   </header>
@@ -101,6 +170,7 @@
   <section class="about">
     <h2 style="font-family: 'Playfair Display', serif;">About Us</h2>
     <p>Marveled Creations brings elegance and thoughtfulness to every bouquet. Whether you're celebrating love, friendship, or a special moment, our floral arrangements are designed to impress and express.</p>
+    <p>Our luxury bouquets are crafted for every cherished occasion—be it holidays, anniversaries, graduations, romantic surprises, engagements, or heartfelt gestures. Whether you're gifting a best friend, proposing to your fiancée, or celebrating your wife, Marveled Creations helps you express emotion through timeless florals.</p>
   </section>
 
   <section class="contact">
@@ -109,13 +179,28 @@
       <input type="text" placeholder="Your Name" required />
       <input type="email" placeholder="Your Email" required />
       <textarea rows="5" placeholder="Your Message"></textarea>
-      <button type="submit" style="background:#f8c6d4;border:none;padding:10px 20px;border-radius:5px;font-weight:bold;cursor:pointer;">Send</button>
+      <button type="submit" style="background:#d4af7f;border:none;padding:10px 20px;border-radius:5px;font-weight:bold;cursor:pointer;color:white;">Send</button>
     </form>
   </section>
 
   <footer>
     &copy; 2025 Marveled Creations. All rights reserved.
   </footer>
+
+  <script>
+    function subscribe() {
+      document.getElementById('popup').style.display = 'none';
+      document.getElementById('popup-minimized').style.display = 'none';
+    }
+    function minimizePopup() {
+      document.getElementById('popup').style.display = 'none';
+      document.getElementById('popup-minimized').style.display = 'block';
+    }
+    function restorePopup() {
+      document.getElementById('popup').style.display = 'flex';
+      document.getElementById('popup-minimized').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
 Add homepage
