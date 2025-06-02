@@ -3,9 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Marveled Creations</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <title>Marveled Creations</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #fdf8f4;
+      color: #4a4a4a;
+    }
+    header {
+      background-image: url('https://images.unsplash.com/photo-1504198266285-1659872e6590');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 100px 20px;
+      color: white;
+    }
+    header h1, header p {
+      background: linear-gradient(to right, #d4af7f, #b8860b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2em;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .featured {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .featured div {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+    }
+    .featured img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .about, .contact, .faq {
+      background: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+    .contact form input, .contact form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+    .confirmation-message {
+      display: none;
+      background: #d4af7f;
+      color: white;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    footer {
+      background: #f2f2f2;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+    #popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    #popup-content {
+      background: #fffaf7;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 400px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+    #popup-content input[type="email"] {
+      padding: 10px;
+      width: 80%;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #popup-content button {
+      background: #d4af7f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #popup-minimized {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #d4af7f;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 9999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .faq-content {
+      display: none;
+      margin-top: 15px;
+    }
+    .faq h2 {
+      cursor: pointer;
+      color: #d4af7f;
+    }
+  </style>
 </head>
 <body>
   <div id="popup">
@@ -21,56 +161,58 @@
   </div>
   <div id="popup-minimized" onclick="restorePopup()">Join Our VIP List</div>
 
-  <header class="logo-header">
-    <div class="logo-overlay">
-      <img src="assets/marveled-creations-logo.png" alt="Marveled Creations Logo">
-    </div>
+  <header>
+    <h1>Marveled Creations</h1>
+    <p>Elegant Bouquets for Every Occasion</p>
   </header>
 
   <section>
-    <h2>Featured Bouquets</h2>
-    <div class="featured">
-      <div>
-        <img src="https://i.etsystatic.com/1613016132/r/il/0f6d1e/1613016132/il_794xN.1613016132_0f6d1e.jpg" alt="Elegant Rose Wrap">
-        <h3>Elegant Rose Wrap</h3>
-        <p>Fresh roses elegantly wrapped, combining beauty and practicality for any occasion.</p>
-      </div>
-      <div>
-        <img src="https://i.etsystatic.com/1886688245/r/il/0f6d1e/1886688245/il_794xN.1886688245_0f6d1e.jpg" alt="Romantic Heart Bouquet">
-        <h3>Romantic Heart Bouquet</h3>
-        <p>A heart-shaped arrangement of pink and white roses, symbolizing love and affection.</p>
-      </div>
-      <div>
-        <img src="https://i.etsystatic.com/1720132434/r/il/0f6d1e/1720132434/il_794xN.1720132434_0f6d1e.jpg" alt="Charming Mixed Bouquet">
-        <h3>Charming Mixed Bouquet</h3>
-        <p>A delightful mix of vibrant flowers complemented by delicate baby's breath.</p>
-      </div>
+  <h2>Featured Bouquets</h2>
+  <div class="featured">
+    <!-- Bouquet 1 -->
+    <div>
+      <img src="https://i.etsystatic.com/1613016132/r/il/0f6d1e/1613016132/il_794xN.1613016132_0f6d1e.jpg" alt="Roses Wrapped in Waterproof Floral Wrapping Paper" />
+      <h3>Elegant Rose Wrap</h3>
+      <p>Fresh roses elegantly wrapped, combining beauty and practicality for any occasion.</p>
     </div>
-  </section>
+    <!-- Bouquet 2 -->
+    <div>
+      <img src="https://i.etsystatic.com/1886688245/r/il/0f6d1e/1886688245/il_794xN.1886688245_0f6d1e.jpg" alt="Heart-Shaped Pink and White Rose Bouquet" />
+      <h3>Romantic Heart Bouquet</h3>
+      <p>A heart-shaped arrangement of pink and white roses, symbolizing love and affection, perfect for special moments.</p>
+    </div>
+    <!-- Bouquet 3 -->
+    <div>
+      <img src="https://i.etsystatic.com/1720132434/r/il/0f6d1e/1720132434/il_794xN.1720132434_0f6d1e.jpg" alt="Mixed Flower Bouquet with Baby's Breath" />
+      <h3>Charming Mixed Bouquet</h3>
+      <p>A delightful mix of vibrant flowers complemented by delicate baby's breath, exuding charm and elegance.</p>
+    </div>
+  </div>
+</section>
 
   <section class="about">
-    <h2>About Us</h2>
-    <p>At Marveled Creations, every bouquet is crafted with a deep sense of elegance, luxury, and emotional connection.</p>
-    <p>Whether you're proposing, celebrating, or gifting, our designs bring beauty and sentiment together in perfect harmony.</p>
+    <h2 style="font-family: 'Playfair Display', serif;">About Us</h2>
+    <p>At Marveled Creations, every bouquet is crafted with a deep sense of elegance, luxury, and emotional connection. We believe flowers aren’t just decorations—they’re meaningful expressions of life’s most cherished moments.</p>
+    <p>Our specialty is in curating high-end arrangements tailored for weddings, engagements, romantic milestones, and heartfelt gifts. Whether you're proposing to your soulmate, celebrating your mother, or surprising a friend, our designs bring beauty and sentiment together in perfect harmony.</p>
   </section>
 
   <section class="faq">
-    <h2 onclick="toggleFAQ()">Frequently Asked Questions +</h2>
+    <h2 onclick="toggleFAQ()" style="font-family: 'Playfair Display', serif;">Frequently Asked Questions +</h2>
     <div class="faq-content">
-      <p><strong>Do you offer custom bouquet designs?</strong> Yes! Contact us with your vision.</p>
-      <p><strong>Where do you deliver?</strong> Currently local metro area; expanding soon.</p>
-      <p><strong>How far in advance should I order?</strong> We recommend 2–3 days in advance.</p>
-      <p><strong>Payment methods?</strong> All major credit cards and PayPal.</p>
+      <p><strong>Do you offer custom bouquet designs?</strong><br>Yes! We love working on custom orders for special occasions. Contact us with your vision.</p>
+      <p><strong>Where do you deliver?</strong><br>Currently, we serve the local metro area, but we’re working on expanding our delivery zones.</p>
+      <p><strong>How far in advance should I place an order?</strong><br>We recommend ordering at least 2–3 days in advance, especially during holidays or peak seasons.</p>
+      <p><strong>What payment methods do you accept?</strong><br>We accept all major credit cards and PayPal.</p>
     </div>
   </section>
 
   <section class="contact">
-    <h2>Get in Touch</h2>
+    <h2 style="font-family: 'Playfair Display', serif;">Get in Touch</h2>
     <form onsubmit="showConfirmation(event)">
       <input type="text" placeholder="Your Name" required />
       <input type="email" placeholder="Your Email" required />
       <textarea rows="5" placeholder="Your Message"></textarea>
-      <button type="submit">Send</button>
+      <button type="submit" style="background:#d4af7f;border:none;padding:10px 20px;border-radius:5px;font-weight:bold;cursor:pointer;color:white;">Send</button>
       <div class="confirmation-message" id="confirmationMessage">Thank you! Your message has been sent.</div>
     </form>
   </section>
@@ -111,3 +253,4 @@
   </script>
 </body>
 </html>
+Add homepage
