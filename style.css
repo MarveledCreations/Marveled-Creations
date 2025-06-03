@@ -147,3 +147,83 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
 }
+
+/* VIP Pop-up Modal */
+.vip-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 2px solid #d4af7f;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  z-index: 1000;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.vip-content h3 {
+  font-family: 'Playfair Display', serif;
+  margin-top: 0;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.vip-content p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.vip-content input[type="email"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.vip-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.vip-buttons button {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #d4af7f;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.vip-buttons button:hover {
+  background-color: #b8860b;
+}
+
+/* Minimized VIP Button */
+.vip-minimized {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #fff;
+  border: 2px solid #d4af7f;
+  border-radius: 30px;
+  padding: 0.7rem 1.2rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  font-family: 'Open Sans', sans-serif;
+  color: #4a4a4a;
+  font-size: 0.9rem;
+}
