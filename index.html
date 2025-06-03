@@ -77,10 +77,38 @@
     💌 Join our VIP List
   </div>
 
+  <!-- FAQ Trigger -->
+  <div id="faqTrigger" class="faq-trigger" onclick="openFAQ()">❓ FAQs</div>
+
+  <!-- FAQ Modal -->
+  <div id="faqModal" class="faq-modal">
+    <div class="faq-content">
+      <div class="faq-header">
+        <h3>Frequently Asked Questions</h3>
+        <span class="faq-close" onclick="closeFAQ()">×</span>
+      </div>
+      <div class="faq-body">
+        <details>
+          <summary>What’s the delivery time for bouquets?</summary>
+          <p>We offer same-day delivery for local orders placed before 2 PM. Other orders are delivered within 1–3 business days.</p>
+        </details>
+        <details>
+          <summary>Do you offer custom bouquet designs?</summary>
+          <p>Yes! You can contact us directly to create a custom bouquet tailored to your occasion and preferences.</p>
+        </details>
+        <details>
+          <summary>Where do you deliver?</summary>
+          <p>We currently deliver within the continental United States. Some areas may have limited service.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
   <footer>
     &copy; 2025 Marveled Creations. All rights reserved.
   </footer>
 
+  <!-- JavaScript -->
   <script>
     window.onload = function () {
       document.getElementById('vipModal').style.display = 'block';
@@ -116,51 +144,14 @@
       }, 5000);
       event.target.reset();
     }
-    
-  </script>
-  window.onload = function () {
-    document.getElementById('vipModal').style.display = 'block';
-  };
 
-  function minimizeVIP() {
-    document.getElementById('vipModal').style.display = 'none';
-    document.getElementById('vipMinimized').style.display = 'block';
-  }
-
-  function restoreVIP() {
-    document.getElementById('vipModal').style.display = 'block';
-    document.getElementById('vipMinimized').style.display = 'none';
-  }
-
-  function submitVIP() {
-    const email = document.getElementById('vipEmail').value.trim();
-    if (!email) {
-      alert("Please enter your email to subscribe.");
-      return;
+    function openFAQ() {
+      document.getElementById('faqModal').style.display = 'block';
     }
-    alert("Thank you for subscribing to our VIP list!");
-    document.getElementById('vipModal').style.display = 'none';
-    document.getElementById('vipMinimized').style.display = 'none';
-  }
 
-  function showConfirmation(event) {
-    event.preventDefault();
-    const message = document.getElementById('confirmationMessage');
-    message.style.display = 'block';
-    setTimeout(() => {
-      message.style.display = 'none';
-    }, 5000);
-    event.target.reset();
-  }
-
-  function openFAQ() {
-    document.getElementById('faqModal').style.display = 'block';
-  }
-
-  function closeFAQ() {
-    document.getElementById('faqModal').style.display = 'none';
-  }
-</script>
-
+    function closeFAQ() {
+      document.getElementById('faqModal').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
